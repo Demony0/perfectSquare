@@ -8,6 +8,7 @@ var submitBtn = document.getElementById('submit');
 
 
 function getNumber(){
+	if (submitBtn.disabled==false){
 	let userInput=document.getElementById("number").value;
 	let x=Math.round(userInput/2)-1;
 	let y = 0;
@@ -15,7 +16,7 @@ function getNumber(){
 		let i=userInput;
 		let j=userInput;
 		
-			if(resetBtn.disable==true){
+			
 		
 				tableWithEmptyCell(x,y,userInput);
 				for (let i = 0 ; i < userInput ; i++){
@@ -24,14 +25,15 @@ function getNumber(){
 						let box=row.insertCell(j);
 						box.innerHTML=cell[i][j];
 					}
-				}
-			}
+				}submitBtn.disabled=true;
+				number.disabled=true;
+			
 			
 			
 		}else{
 			alert("You Input an Even Number Or Missing Input");
-	}	
-}
+	}
+}}
 
 function tableWithEmptyCell(x,y,userInput){
 	// table
@@ -70,18 +72,18 @@ function tableWithEmptyCell(x,y,userInput){
 		}
 		count++;
 	 }while(count<userInput*userInput+1);
-	 resetBtn.disable=false;
-	 submitBtn.disable=false;
+	 resetBtn.disabled=false;
 }
 
 
 
 function clearNumber(){
 	userInput=document.getElementById("number").value;
-	if(resetBtn.disable==false){
+	if(resetBtn.disabled==false){
 		for (let i = 0 ; i < userInput ; i++){
 				table.deleteRow(0);
-		}submitBtn.disable=false;
+		}submitBtn.disabled=false;
+		number.disabled=false;
 	}
-	resetBtn.disable=true;
+	resetBtn.disabled=true;
 }
