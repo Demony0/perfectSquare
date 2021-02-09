@@ -12,14 +12,16 @@
 		
 		<body>
 			<span class="userInput">
-				<h3>Input Any Odd Number:</h3>
+				<span class="processButton">
+					<input type="submit" onclick="getNumber() " class="button" id="submit">
+					<input type="reset" onclick="clearNumber()" class="button" id="reset">
+				</span>
+				<span class="inputNumber">
+				<p>Input Odd Number</p>
 				<input name="number" type="number" id="number"/>
-				<input type="submit" onclick="getNumber()">
-				<input type="reset" onclick="clearNumber()">
+				</span>
 			</span>
-			<table id="tables" border="1"> 
-				
-			</table>
+			<table id="tables" border="1"></table>
 		</body>
 	
 	</html>
